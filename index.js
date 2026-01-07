@@ -1,23 +1,15 @@
 const express = require("express")
 const app = express()
 app.use(express.json())
-
-// app.post("/signup",(req,res)=>{
-
-// })
-
-// app.post("/login",(req,res)=>{
-
-// })
-
-// app.get("/courses",(req,res)=>{
-
-// })
+import {CourseRouter} from "./routes/course.js"
+import {userRouter} from "./routes/user.js"
 
 
-// app.get("/courses/:courseId",(req,res)=>{
+app.use('/api/v1/users',userRouter)
+app.use('/api/v1/courses',CourseRouter)
 
-// })
+
+
 
 
 
