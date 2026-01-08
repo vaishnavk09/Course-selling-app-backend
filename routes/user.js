@@ -1,20 +1,19 @@
 const {Router} = require('express')
-const UserRouter= Router()
+const userRouter= Router()
 
 
-UserRouter.post('/signup',(req,res)=>{
-
-})
-
-UserRouter.post('/login',(req,res)=>{
+userRouter.post('/signup',(req,res)=>{
 
 })
 
-UserRouter.get('/preview',(req,res)=>{
+userRouter.post('/login',(req,res)=>{
+})
+
+userRouter.get('/preview',(req,res)=>{
 
 })
 
 
 module.exports={
-    UserRouter: UserRouter
+    userRouter: userRouter
 }

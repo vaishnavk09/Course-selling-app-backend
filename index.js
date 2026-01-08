@@ -1,12 +1,16 @@
 const express = require("express")
+const dotenv = require("dotenv")
+const {courseRouter} = require("./routes/course.js")
+const {userRouter} = require("./routes/user.js")
+
+dotenv.config()
+const env = process.env
 const app = express()
 app.use(express.json())
-import {CourseRouter} from "./routes/course.js"
-import {userRouter} from "./routes/user.js"
 
 
 app.use('/api/v1/users',userRouter)
-app.use('/api/v1/courses',CourseRouter)
+app.use('/api/v1/courses',courseRouter)
 
 
 
@@ -20,7 +24,7 @@ app.use('/api/v1/courses',CourseRouter)
 
 
 
-app.listen(3000,()=>{
-    console.log("server running on http://localhost:3000");
+app.listen(env.PORT,()=>{
+    console.log("server running on http://localhost:"+env.PORT);
     
 })
