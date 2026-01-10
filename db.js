@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(env.MONGO_URI)
+
 
 const Schema= mongoose.Schema
 const ObjectId= Schema.ObjectId
@@ -32,14 +32,14 @@ const purchaseSchema = new Schema({
     courseId: ObjectId
 });
 
-const User = mongoose.model('User',UserSchema)
-const Admin = mongoose.model('Admin', adminSchema);
-const Course = mongoose.model('Course', courseSchema);
-const Purchase = mongoose.model('Purchase', purchaseSchema);
+const userModel = mongoose.model('User',UserSchema)
+const adminModel = mongoose.model('Admin', adminSchema);
+const courseModel = mongoose.model('Course', courseSchema);
+const purchaseModel = mongoose.model('Purchase', purchaseSchema);
 
 module.exports={
-    User: User,
-    Admin: Admin,
-    Course: Course,
-    Purchase: Purchase
+    userModel: userModel,
+    adminModel: adminModel,
+    courseModel: courseModel,
+    purchaseModel: purchaseModel
 }
